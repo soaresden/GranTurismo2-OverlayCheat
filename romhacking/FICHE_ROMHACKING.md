@@ -1,7 +1,9 @@
 # Fiche romhacking.net — Gran Turismo 2 Overlay Cheat
 
 Textes à copier dans le formulaire « Submit a hack ». Le site est en anglais ; la version
-française de la description est en bas, si tu veux la mettre dans le readme ou ailleurs.
+française de la description est en bas, si tu veux la mettre dans le readme ou ailleurs. La
+fiche de GT1 est dans le dépôt GranTurismo1-OverlayCheat (`romhacking/FICHE_ROMHACKING.md`) :
+deux envois séparés, un par jeu.
 
 ## Fichiers à envoyer
 
