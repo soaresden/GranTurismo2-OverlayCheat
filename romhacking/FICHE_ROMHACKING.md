@@ -7,12 +7,17 @@ deux envois séparés, un par jeu.
 
 ## Fichiers à envoyer
 
-- **Patch** : `GT2-OverlayCheat-v1.0.zip` (PPF + xdelta + README.txt + LISEZMOI.txt)
-- **Captures** (PNG, résolution d'origine du jeu), dans cet ordre :
+- **Patch** : `GT2-OverlayCheat-v1.0.zip` (https://raw.githubusercontent.com/soaresden/GranTurismo2-OverlayCheat/main/romhacking/GT2-OverlayCheat-v1.0.zip) (PPF + xdelta + README.txt + LISEZMOI.txt)
+- **Captures** (PNG, résolution d'origine du jeu), dans cet ordre ; romhacking.net les prend
+  par URL, les adresses directes sur GitHub sont sous chaque ligne :
   1. `screenshots/0_menu_language_screen.png` — le menu sur l'écran des langues (368 × 480)
+     https://raw.githubusercontent.com/soaresden/GranTurismo2-OverlayCheat/main/romhacking/screenshots/0_menu_language_screen.png
   2. `screenshots/1_menu_city_map.png` — le menu sur la carte du mode GT (512 × 504)
+     https://raw.githubusercontent.com/soaresden/GranTurismo2-OverlayCheat/main/romhacking/screenshots/1_menu_city_map.png
   3. `screenshots/2_menu_licence_test.png` — le menu pendant le permis B-1 (320 × 256)
+     https://raw.githubusercontent.com/soaresden/GranTurismo2-OverlayCheat/main/romhacking/screenshots/2_menu_licence_test.png
   4. `screenshots/3_licence_timer_frozen.png` — le chrono figé en permis (320 × 256)
+     https://raw.githubusercontent.com/soaresden/GranTurismo2-OverlayCheat/main/romhacking/screenshots/3_licence_timer_frozen.png
 
 ## Champs du formulaire
 
