@@ -1,0 +1,9 @@
+tools/emu/out/
+*.bin
+*.cue
+*.chd
+*.iso
+__pycache__/
+TEST*/
+build/
+tools/emu/states/
