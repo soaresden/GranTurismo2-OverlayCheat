@@ -57,7 +57,12 @@ la manette à chaque trame ; la triche ignore les lectures déjà traitées.
 
 ## Appliquer le patch
 
-Python 3, rien à installer :
+**Disque Simulation d'origine** : un patch PPF ou xdelta, dans la
+[release](https://github.com/soaresden/GranTurismo2-OverlayCheat/releases/latest) (dossier
+`patch/`), à appliquer au `.bin` (une piste, 2352 octets par secteur ; CRC32 64439308, SHA-1
+`c63a53bcf5ac6e49547a0c95b05174deff172021`).
+
+**Tous les disques**, combiné et GT2 Plus compris, avec le script (Python 3, rien à installer) :
 
 ```bash
 python patch_disc.py "Gran Turismo 2.chd"            # -> "Gran Turismo 2 [Cheat].bin" + .cue

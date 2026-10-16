@@ -56,7 +56,12 @@ read the pad again every vertical blank; the cheat skips the reads it has alread
 
 ## Applying the patch
 
-Python 3, nothing to install:
+**Original Simulation disc**: a PPF or xdelta patch, in the
+[release](https://github.com/soaresden/GranTurismo2-OverlayCheat/releases/latest) (folder
+`patch/`), for the `.bin` (single track, 2352 bytes per sector; CRC32 64439308, SHA-1
+`c63a53bcf5ac6e49547a0c95b05174deff172021`).
+
+**Every disc**, combined and GT2 Plus included, with the script (Python 3, nothing to install):
 
 ```bash
 python patch_disc.py "Gran Turismo 2.chd"            # -> "Gran Turismo 2 [Cheat].bin" + .cue
