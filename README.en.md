@@ -2,6 +2,9 @@
 
 🇫🇷 [Version française](README.md)
 
+**▶ [Add the cheat to your disc, in your browser](https://soaresden.github.io/GranTurismo2-OverlayCheat/)**: choose your `.chd` or `.bin`, the
+page gives you back the disc image with the cheat menu (nothing is sent over the internet).
+
 A patch for **Gran Turismo 2** (PlayStation, European release, Simulation disc **SCES-12380**):
 hold **SELECT** and a small menu appears over the game, with two options:
 

@@ -2,6 +2,9 @@
 
 🇬🇧 [English version](README.en.md)
 
+**▶ [Ajouter la triche à ton disque, dans ton navigateur](https://soaresden.github.io/GranTurismo2-OverlayCheat/)** : choisis ton `.chd` ou ton `.bin`,
+la page te rend l'image disque avec le menu de triche (rien n'est envoyé sur internet).
+
 Un patch pour **Gran Turismo 2** (PlayStation, version européenne, disque Simulation
 **SCES-12380**) : en maintenant **SELECT**, un petit menu apparaît par-dessus le jeu, avec deux
 options :
