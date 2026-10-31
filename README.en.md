@@ -5,6 +5,11 @@
 **▶ [Add the cheat to your disc, in your browser](https://soaresden.github.io/GranTurismo2-OverlayCheat/)**: choose your `.chd` or `.bin`, the
 page gives you back the disc image with the cheat menu (nothing is sent over the internet).
 
+On the page, three switches: **in-game menu** (SELECT or L1 + R1 + L2 + R2), **licence timer
+frozen** from power-on and **money at the maximum** all the time; the last two work by themselves,
+without the menu. On the command line: `python patch_disc.py "Gran Turismo 2.chd" --freeze --money` (and
+`--no-menu` to leave the menu out).
+
 A patch for **Gran Turismo 2** (PlayStation, European release, Simulation disc **SCES-12380**):
 hold **SELECT** and a small menu appears over the game, with two options:
 

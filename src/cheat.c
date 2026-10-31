@@ -47,6 +47,13 @@ typedef unsigned int u32;
 #define B_SHOULDERS (B_L1 | B_R1 | B_L2 | B_R2)
 
 /* the state, at STATE (outside the block): tick_store reads `freeze` at STATE + 4 */
+/* options word of the block (start.S, 0x8000F008), written by the patcher (the page's switches);
+   0: the menu, as before */
+#define OPTIONS (*(volatile u32 *)0x8000F008)
+#define OPT_NO_MENU 0x001                /* no menu: SELECT is the game's, nothing is drawn */
+#define OPT_MONEY 0x004                  /* credits kept at the maximum, every frame */
+#define OPT_FREEZE 0x100                 /* FREEZE TIMER on from power on */
+
 struct g {
     u32 magic;
     u8 freeze;                                   /* FREEZE TIMER on */
@@ -97,7 +104,8 @@ int cheat_boot(void)
         return 0;
     if (g->magic != MAGIC) {
         g->magic = MAGIC;
-        g->freeze = g->line = 0;
+        g->line = 0;
+        g->freeze = (OPTIONS & OPT_FREEZE) != 0;
         g->step = 3;
     }
     g->prev = 0;
@@ -105,7 +113,8 @@ int cheat_boot(void)
     /* lui $v0, %hi(pad_hook) / addiu $v0, $v0, %lo(pad_hook) */
     *lui = 0x3C020000 | (((a + 0x8000) >> 16) & 0xFFFF);
     *addiu = 0x24420000 | (a & 0xFFFF);
-    *d0 = *d1 = jal(draw_hook);
+    if (!(OPTIONS & OPT_NO_MENU))
+        *d0 = *d1 = jal(draw_hook);
     return 1;
 }
 
@@ -163,8 +172,12 @@ void pad_hook(void)
 {
     struct g *g = G;
     u8 *p = (u8 *)PAD_BUF;
-    u32 b, pr;
+    u32 b, pr, o = OPTIONS;
 
+    if (o & OPT_MONEY)
+        *(volatile u32 *)MONEY = MONEY_MAX;
+    if (o & OPT_NO_MENU)
+        goto game;
     if ((p[1] & 0xF0) == 0x80)                    /* multitap: its slot A */
         p += 2;
     if (p[0]) {                                   /* no pad on port 1 */

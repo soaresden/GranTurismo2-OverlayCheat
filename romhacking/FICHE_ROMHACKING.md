@@ -7,7 +7,7 @@ deux envois séparés, un par jeu.
 
 ## Fichiers à envoyer
 
-- **Patch** : `GT2-OverlayCheat-v1.0.zip` (https://raw.githubusercontent.com/soaresden/GranTurismo2-OverlayCheat/main/romhacking/GT2-OverlayCheat-v1.0.zip) (PPF + xdelta + README.txt + LISEZMOI.txt)
+- **Patch** : `GT2-OverlayCheat-v1.1.zip` (https://raw.githubusercontent.com/soaresden/GranTurismo2-OverlayCheat/main/romhacking/GT2-OverlayCheat-v1.1.zip) (PPF + xdelta + README.txt + LISEZMOI.txt)
 - **Captures** (PNG, résolution d'origine du jeu), dans cet ordre ; romhacking.net les prend
   par URL, les adresses directes sur GitHub sont sous chaque ligne :
   1. `screenshots/0_menu_language_screen.png` — le menu sur l'écran des langues (368 × 480)
@@ -28,8 +28,8 @@ deux envois séparés, un par jeu.
 | Platform | PlayStation |
 | Category | Cheat *(sinon : Improvement)* |
 | Status | Fully Playable |
-| Version | 1.0 |
-| Release date | 2026-10-16 |
+| Version | 1.1 |
+| Release date | 2026-10-31 |
 | Language | English *(le menu ; le jeu reste dans sa langue)* |
 | Author | soaresden |
 | Website | https://github.com/soaresden/GranTurismo2-OverlayCheat |
@@ -68,6 +68,9 @@ The patch only changes SCES_123.80 and GT2.OVL (no game data is touched) and wor
 original Simulation disc. For the combined disc (GT2-Combined-Disc) and pez2k's GT2 Plus, use the
 Python tool of the project (patch_disc.py), which takes a .chd, .cue or .bin.
 
+Options (web page https://soaresden.github.io/GranTurismo2-OverlayCheat/ or patch_disc.py): the in-game menu, the licence timer frozen from
+power-on, money kept at the maximum; the last two work without the menu.
+
 Tested in PCSX-Redux (Sony BIOS and OpenBIOS) and in RetroArch / RALibretro with the Beetle PSX
 core. Sources and technical notes on GitHub.
 ```
@@ -91,6 +94,9 @@ utiliser dans RetroArch, où SELECT est souvent la touche « hotkey ».
 Le patch ne modifie que SCES_123.80 et GT2.OVL et marche sur le disque Simulation d'origine. Pour
 le disque combiné (GT2-Combined-Disc) et GT2 Plus de pez2k, utilisez l'outil Python du projet
 (patch_disc.py), qui prend un .chd, .cue ou .bin.
+
+Options (page web https://soaresden.github.io/GranTurismo2-OverlayCheat/ ou patch_disc.py) : le menu en jeu, le chrono des permis figé dès
+l'allumage, l'argent toujours au maximum ; les deux derniers marchent sans le menu.
 
 Essayé dans PCSX-Redux (BIOS Sony et OpenBIOS) et dans RetroArch / RALibretro avec le cœur
 Beetle PSX. Sources et notes techniques sur GitHub.

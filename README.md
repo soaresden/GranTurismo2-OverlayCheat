@@ -5,6 +5,11 @@
 **▶ [Ajouter la triche à ton disque, dans ton navigateur](https://soaresden.github.io/GranTurismo2-OverlayCheat/)** : choisis ton `.chd` ou ton `.bin`,
 la page te rend l'image disque avec le menu de triche (rien n'est envoyé sur internet).
 
+Sur la page, trois interrupteurs : **menu en jeu** (SELECT ou L1 + R1 + L2 + R2), **chrono des
+permis figé** dès l'allumage et **argent au maximum** en permanence ; les deux derniers marchent
+tout seuls, sans le menu. En ligne de commande : `python patch_disc.py "Gran Turismo 2.chd" --freeze --money`
+(et `--no-menu` pour retirer le menu).
+
 Un patch pour **Gran Turismo 2** (PlayStation, version européenne, disque Simulation
 **SCES-12380**) : en maintenant **SELECT**, un petit menu apparaît par-dessus le jeu, avec deux
 options :

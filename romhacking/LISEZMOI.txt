@@ -1,4 +1,4 @@
-Gran Turismo 2 (PS1, PAL) - Menu de triche en surimpression v1.0
+Gran Turismo 2 (PS1, PAL) - Menu de triche en surimpression v1.1
 ================================================================
 par soaresden - https://github.com/soaresden/GranTurismo2-OverlayCheat
 
@@ -34,6 +34,12 @@ Tant que le menu est ouvert, le jeu ne reçoit plus la manette.
 
 Appliquer le patch
 ------------------
+Options (la page web https://soaresden.github.io/GranTurismo2-OverlayCheat/ ou patch_disc.py) :
+  --freeze    chrono des permis figé dès l'allumage
+  --money     argent au maximum (99 999 999) en permanence
+  --no-menu   sans le menu en jeu (avec --freeze et/ou --money)
+Les patchs PPF / xdelta donnent le menu seul.
+
 Sur le disque Simulation (disque 2, SCES-12380, « Gran Turismo Mode »), avec l'un des deux :
   Gran Turismo 2 (Europe) (Disc 2) [Overlay Cheat].ppf     (PPF 3.0, octets modifiés seulement)
   Gran Turismo 2 (Europe) (Disc 2) [Overlay Cheat].xdelta  (xdelta3)
@@ -44,8 +50,8 @@ Image d'origine : un .bin d'une piste, 2352 octets par secteur :
   CRC32  64439308
   SHA-1  c63a53bcf5ac6e49547a0c95b05174deff172021
 Image patchée :
-  CRC32  41B7DCB9
-  SHA-1  9fe8e1acf3819398fc4849efc26bbf0f4601cd93
+  CRC32  44FE698D
+  SHA-1  3a936d8b549751a9153390e0ca52bed0a4a0a249
 
 Disque combiné (GT2-Combined-Disc) et GT2 Plus : leur organisation diffère, utilisez l'outil
 Python du projet (patch_disc.py, Python 3, rien à installer), qui prend un .chd, .cue ou .bin et

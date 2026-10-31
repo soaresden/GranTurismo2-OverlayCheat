@@ -1,5 +1,5 @@
 /* First words of the resident block (0x8000F000): the magic and the version, checked by the
-   start-up stub; then tick_store, the jump target of the race overlay's lap clock store. */
+   start-up stub, and the options; then tick_store, the jump target of the race overlay's lap clock store. */
 #include "game.h"
     .set noreorder
     .set noat
@@ -8,6 +8,7 @@
 _start:
     .word PAYLOAD_MAGIC
     .word PAYLOAD_VERSION
+    .word 0                     /* options (OPTIONS of cheat.c): written by gt2cheat/patcher.py */
 
 /* In place of `sw $v0, ($a2) / jr $ra` at the end of the race overlay's clock tick ($v0: the new
    clock, $a2: its address): the store is skipped while FREEZE TIMER is on in a licence test,

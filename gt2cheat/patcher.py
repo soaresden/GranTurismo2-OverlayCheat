@@ -21,8 +21,20 @@ def _word(data, base, addr):
     return struct.unpack_from('<I', data, addr - base)[0]
 
 
-def patch_exe(exe):
-    """SCES_123.80 with the stub and the block in its overlay area and its entry on the stub."""
+# options (the page's switches): the word at offset 8 of the resident block (src/start.S, OPTIONS
+# of src/cheat.c); 0 = the menu, as the release patches
+NO_MENU, MONEY, FREEZE = 0x001, 0x004, 0x100
+
+
+def options_word(menu=True, freeze=False, money=False):
+    """The options word: menu (SELECT / L1 + R1 + L2 + R2), FREEZE TIMER on from power on, credits
+    kept at 99,999,999."""
+    return (0 if menu else NO_MENU) | (FREEZE if freeze else 0) | (MONEY if money else 0)
+
+
+def patch_exe(exe, options=0):
+    """SCES_123.80 with the stub and the block in its overlay area and its entry on the stub.
+    options: options_word()."""
     if exe[:8] != b'PS-X EXE':
         raise PatchError('%s: not a PlayStation executable' % game.EXE)
     pc, _, taddr, tsize = struct.unpack_from('<IIII', exe, 0x10)
@@ -35,7 +47,8 @@ def patch_exe(exe):
                        (game.DRAW_SITES[0], game.DRAW_WORD), (game.DRAW_SITES[1], game.DRAW_WORD)):
         if _word(text, taddr, addr) != want:
             raise PatchError('%s: 0x%08X is not the expected code' % (game.EXE, addr))
-    code = payload.STUB + payload.BLOCK
+    block = payload.BLOCK[:8] + struct.pack('<I', options) + payload.BLOCK[12:]
+    code = payload.STUB + block
     o = game.STUB_ADDR - taddr
     if any(text[o:o + len(code)]):
         raise PatchError('%s: the room for the cheat is not free' % game.EXE)
@@ -91,13 +104,13 @@ def patch_ovl(ovl):
     return bytes(out[:last_o + last_s])
 
 
-def patch_disc(src, dst, progress=None):
+def patch_disc(src, dst, progress=None, options=0):
     from . import disc
     d = disc.Disc(src)
     for name in (game.EXE, game.OVL):
         if name not in d.files:
             raise PatchError('%s not on the disc: not the Gran Turismo 2 Simulation disc' % name)
-    files = {game.EXE: patch_exe(d.read(game.EXE)), game.OVL: patch_ovl(d.read(game.OVL))}
+    files = {game.EXE: patch_exe(d.read(game.EXE), options), game.OVL: patch_ovl(d.read(game.OVL))}
     for name, data in files.items():
         if len(data) > d.room(name):
             raise PatchError('%s: %d bytes, room for %d' % (name, len(data), d.room(name)))
